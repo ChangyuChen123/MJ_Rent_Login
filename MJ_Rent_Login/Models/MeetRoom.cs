@@ -13,7 +13,7 @@ namespace MJ_Rent_Login.Models
 
         [Display(Name = "簡介")]
         public string Description { get; set; }
-
+        
         [Display(Name = "類型")]
         public string Type { get; set; }
 

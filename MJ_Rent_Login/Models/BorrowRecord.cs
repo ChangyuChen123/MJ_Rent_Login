@@ -17,11 +17,11 @@ namespace MJ_Rent_Login.Models
         [Display(Name = "預約日期")]
         public DateTime BorrowDateTime { get; set; }
 
-        [Display(Name = "租借時數")]
+        [Display(Name = "預約時間長度")]
         //預約時間長度
         public int PreBorrowTimeLength { get; set; }
 
-        [Display(Name = "已用時間")]
+        [Display(Name = "實際租用長度")]
         //實際借用長度
         public int ActualBorrowTime { get; set; }
 
