@@ -13,13 +13,13 @@ namespace MJ_Rent_Login.Models
 
         [Display(Name = "使用者")]
         public string UserId { get; set; } = "";
-
-        [Display(Name = "預約時間")]
+        
         //預約時間
+        [Display(Name = "預約日期時間")]
         public DateTime ResDateTime { get; set; }
 
-        [Display(Name = "預約時間長度")]
         //預約時間長度
+        [Display(Name = "預約時間長度")]
         public int ResTimeLength { get; set; }
 
 

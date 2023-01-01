@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using MJ_Rent_Login.Data;
 using MJ_Rent_Login.Models;
 
@@ -19,8 +20,29 @@ namespace MJ_Rent_Login.Pages.Reserves
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public SelectList? Names { get; set; }
+        public string? MeetRoomName { get; set; } //包含內容類型清單
+
+        public async Task<IActionResult> OnGetAsync()
         {
+            //下拉式清單顯示
+            IQueryable<string> NameQuery = from m in _context.MeetRoom
+                                            orderby m.Name
+                                            select m.Name;
+
+            var meetroom = from m in _context.MeetRoom
+                         select m;
+
+            if (!string.IsNullOrEmpty(MeetRoomName))
+            {
+                meetroom = meetroom.Where(x => x.Name == MeetRoomName);
+            }
+
+            Names = new SelectList(await NameQuery.Distinct().ToListAsync());
+
+
+
+
             return Page();
         }
 

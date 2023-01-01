@@ -23,7 +23,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">首頁</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">隱私</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">使用規則</a>
                         </li>
                         
                         <li class="nav-item dropdown">
@@ -32,12 +32,36 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" asp-area="" asp-page="/MeetRooms/index">會議室列表</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/BorrowRecords/index">租借紀錄</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/NotifyInfos/index">通知管理</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Reserves/index">預定系統</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/MeetRooms/Create">新增會議室</a></li>
+                            </ul>                
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                預約系統
+                            </a>                           
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Reserves/index">預約系統</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Reserves/Create">新增預約</a></li>
                             </ul>
                         </li>
-
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                租借紀錄
+                            </a>                            
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/BorrowRecords/index">租借紀錄</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/BorrowRecords/Create">新增租借紀錄</a></li>
+                            </ul>                           
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                通知管理
+                            </a>                            
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/NotifyInfos/index">通知管理</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/NotifyInfos/Create">新增通知</a></li>
+                            </ul>                            
+                        </li>
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -52,7 +76,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - MJ_Rent_Login - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2022 - 會議室預約系統 - <a asp-area="" asp-page="/Privacy">使用規則</a>
         </div>
     </footer>
 
