@@ -2,14 +2,14 @@
 @model MJ_Rent_Login.Pages.NotifyInfos.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "通知管理";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>通知管理</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">新增通知</a>
 </p>
 <table class="table">
     <thead>
@@ -39,9 +39,9 @@
                 @Html.DisplayFor(modelItem => item.HaveNotify)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">編輯</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">詳細內容</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">刪除</a>
             </td>
         </tr>
 }

@@ -2,13 +2,13 @@
 @model MJ_Rent_Login.Pages.BorrowRecords.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "新增租借紀錄";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<h1>新增</h1>
 
-<h4>BorrowRecord</h4>
+<h4>租借紀錄</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -40,14 +40,14 @@
                 <span asp-validation-for="BorrowRecord.ActualBorrowTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="新增" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">返回列表</a>
 </div>
 
 @section Scripts {
