@@ -21,24 +21,27 @@ namespace MJ_Rent_Login.Pages.Reserves
         }
 
         public SelectList? Names { get; set; }
-        public string? MeetRoomName { get; set; } //包含內容類型清單
+        //public string? MeetRoomName { get; set; } //包含內容類型清單
 
         public async Task<IActionResult> OnGetAsync()
         {
             //下拉式清單顯示
-            IQueryable<string> NameQuery = from m in _context.MeetRoom
+            var roomQuery = from m in _context.MeetRoom
                                             orderby m.Name
-                                            select m.Name;
+                                            select new { m.Name, m.Id };
 
-            var meetroom = from m in _context.MeetRoom
-                         select m;
+            Names = new SelectList(roomQuery,"Id","Name");
 
-            if (!string.IsNullOrEmpty(MeetRoomName))
-            {
-                meetroom = meetroom.Where(x => x.Name == MeetRoomName);
-            }
+            //var meetroom = from m in _context.MeetRoom
+            //             select m;
 
-            Names = new SelectList(await NameQuery.Distinct().ToListAsync());
+            //if (!string.IsNullOrEmpty(MeetRoomName))
+            //{
+            //    meetroom = meetroom.Where(x => x.Name == MeetRoomName);
+            //}
+
+
+
 
 
 
