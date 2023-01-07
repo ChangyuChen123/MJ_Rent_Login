@@ -47,6 +47,7 @@ namespace MJ_Rent_Login.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [EmailAddress]
+            [Display(Name = "信箱")]
             public string Email { get; set; }
         }
 

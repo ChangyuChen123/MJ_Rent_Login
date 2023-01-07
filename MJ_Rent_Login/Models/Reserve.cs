@@ -8,7 +8,7 @@ namespace MJ_Rent_Login.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "會議室")]
+        [Display(Name = "會議室編號")]
         public int RoomId { get; set; }
 
         [Display(Name = "使用者")]
@@ -22,6 +22,6 @@ namespace MJ_Rent_Login.Models
         [Display(Name = "預約時間長度")]
         public int ResTimeLength { get; set; }
 
-
+        
     }
 }

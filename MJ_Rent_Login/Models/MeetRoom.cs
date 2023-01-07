@@ -6,6 +6,7 @@ namespace MJ_Rent_Login.Models
 {
     public class MeetRoom
     {
+        [Display(Name = "會議室編號")]
         public int Id { get; set; }
 
         [Display(Name = "會議室名稱")]

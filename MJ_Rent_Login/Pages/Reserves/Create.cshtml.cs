@@ -21,8 +21,8 @@ namespace MJ_Rent_Login.Pages.Reserves
         }
 
         public SelectList? Names { get; set; }
-        //public string? MeetRoomName { get; set; } //包含內容類型清單
-
+        public string? MeetRoomName { get; set; } //包含內容類型清單
+        public string roomnames { get; set; }
         public async Task<IActionResult> OnGetAsync()
         {
             //下拉式清單顯示
@@ -32,18 +32,15 @@ namespace MJ_Rent_Login.Pages.Reserves
 
             Names = new SelectList(roomQuery,"Id","Name");
 
-            //var meetroom = from m in _context.MeetRoom
-            //             select m;
+            
+
+                //var meetroom = from m in _context.MeetRoom
+                //             select m;
 
             //if (!string.IsNullOrEmpty(MeetRoomName))
             //{
             //    meetroom = meetroom.Where(x => x.Name == MeetRoomName);
             //}
-
-
-
-
-
 
 
             return Page();
