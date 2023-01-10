@@ -23,6 +23,8 @@ namespace MJ_Rent_Login.Pages.Reserves
         [BindProperty]
         public Reserve Reserve { get; set; } = default!;
 
+        public SelectList? Names { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.Reserve == null)
@@ -36,6 +38,13 @@ namespace MJ_Rent_Login.Pages.Reserves
                 return NotFound();
             }
             Reserve = reserve;
+
+            var roomQuery = from m in _context.MeetRoom
+                            orderby m.Name
+                            select new { m.Name, m.Id };
+
+            Names = new SelectList(roomQuery, "Id", "Name");
+
             return Page();
         }
         

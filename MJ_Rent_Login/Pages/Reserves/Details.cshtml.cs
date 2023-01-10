@@ -12,30 +12,36 @@ namespace MJ_Rent_Login.Pages.Reserves
 {
     public class DetailsModel : PageModel
     {
-        private readonly MJ_Rent_Login.Data.ApplicationDbContext _context;
+        public readonly MJ_Rent_Login.Data.ApplicationDbContext _context;
 
         public DetailsModel(MJ_Rent_Login.Data.ApplicationDbContext context)
         {
             _context = context;
         }
 
-      public Reserve Reserve { get; set; }
+        public Reserve Reserve { get; set; }
+
+        //public IList<Reserve> Reserves { get; set; } = default!;
+
+        //public string RoomName { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            
             if (id == null || _context.Reserve == null)
             {
                 return NotFound();
-            }
+            }           
 
-            var reserve = await _context.Reserve.FirstOrDefaultAsync(m => m.Id == id);
+            var reserve = await _context.Reserve.FirstOrDefaultAsync(m => m.Id == id);            
+
             if (reserve == null)
             {
                 return NotFound();
             }
             else 
             {
-                Reserve = reserve;
+                Reserve = reserve;                                       
             }
             return Page();
         }

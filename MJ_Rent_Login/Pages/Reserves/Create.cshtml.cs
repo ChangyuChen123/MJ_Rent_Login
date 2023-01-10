@@ -21,14 +21,16 @@ namespace MJ_Rent_Login.Pages.Reserves
         }
 
         public SelectList? Names { get; set; }
-        public string? MeetRoomName { get; set; } //包含內容類型清單
-        public string roomnames { get; set; }
+
+        //public string? MeetRoomName { get; set; } //包含內容類型清單
+
+        
         public async Task<IActionResult> OnGetAsync()
         {
             //下拉式清單顯示
             var roomQuery = from m in _context.MeetRoom
-                                            orderby m.Name
-                                            select new { m.Name, m.Id };
+                            orderby m.Name
+                            select new { m.Name, m.Id };
 
             Names = new SelectList(roomQuery,"Id","Name");
 
