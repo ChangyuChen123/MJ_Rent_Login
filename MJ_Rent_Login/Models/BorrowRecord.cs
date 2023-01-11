@@ -8,7 +8,7 @@ namespace MJ_Rent_Login.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "會議室")]
+        [Display(Name = "房間名稱")]
         public int RoomId { get; set; }
 
         [Display(Name = "使用者")]

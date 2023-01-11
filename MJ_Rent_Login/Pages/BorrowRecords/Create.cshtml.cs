@@ -19,8 +19,16 @@ namespace MJ_Rent_Login.Pages.BorrowRecords
             _context = context;
         }
 
+        public SelectList? Names { get; set; }
+
+
         public IActionResult OnGet()
         {
+            var roomQuery = from m in _context.MeetRoom
+                            orderby m.Name
+                            select new { m.Name, m.Id };
+
+            Names = new SelectList(roomQuery, "Id", "Name");
             return Page();
         }
 

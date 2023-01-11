@@ -2,14 +2,14 @@
 @model MJ_Rent_Login.Pages.Reserves.IndexModel
 
 @{
-    ViewData["Title"] = "預約會議室";
+    ViewData["Title"] = "預訂房間";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>預約會議室</h1>
+<h1>預訂房間</h1>
 
 <p>
-    <a asp-page="Create">新增預約</a>
+    <a asp-page="Create">新增預訂</a>
 </p>
 <table class="table">
     <thead>
@@ -54,7 +54,7 @@
                 @Html.DisplayFor(modelItem => item.ResDateTime)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ResTimeLength)
+                @Html.DisplayFor(modelItem => item.ResTimeLength)天
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">編輯</a> |

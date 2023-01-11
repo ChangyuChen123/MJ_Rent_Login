@@ -23,6 +23,9 @@ namespace MJ_Rent_Login.Pages.BorrowRecords
         [BindProperty]
         public BorrowRecord BorrowRecord { get; set; } = default!;
 
+        public SelectList? Names { get; set; }
+
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.BorrowRecord == null)
@@ -36,6 +39,13 @@ namespace MJ_Rent_Login.Pages.BorrowRecords
                 return NotFound();
             }
             BorrowRecord = borrowrecord;
+
+            var roomQuery = from m in _context.MeetRoom
+                            orderby m.Name
+                            select new { m.Name, m.Id };
+
+            Names = new SelectList(roomQuery, "Id", "Name");
+
             return Page();
         }
 

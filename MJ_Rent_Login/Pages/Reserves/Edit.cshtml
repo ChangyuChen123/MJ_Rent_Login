@@ -2,13 +2,13 @@
 @model MJ_Rent_Login.Pages.Reserves.EditModel
 
 @{
-    ViewData["Title"] = "編輯預約";
+    ViewData["Title"] = "編輯預訂";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
 <h1>編輯</h1>
 
-<h4>預約</h4>
+<h4>預訂</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -37,15 +37,14 @@
                 <label asp-for="Reserve.ResTimeLength" class="control-label"></label>
 
                 <select class="form-select" aria-label="Default select example" asp-for="Reserve.ResTimeLength">
-                    <option selected>請選擇時間長度</option>
-                    <option value="30">30</option>
-                    <option value="60">60</option>
-                    <option value="90">90</option>
-                    <option value="120">120</option>
-                    <option value="150">150</option>
-                    <option value="180">180</option>
-                    <option value="300">300</option>
-                    <option value="480">480</option>
+                    <option selected>請選擇預定天數</option>
+                    <option value="1">1天</option>
+                    <option value="2">2天</option>
+                    <option value="3">3天</option>
+                    <option value="4">4天</option>
+                    <option value="5">5天</option>
+                    <option value="6">6天</option>
+                    <option value="7">7天</option>
                 </select>
 
                 <span asp-validation-for="Reserve.ResTimeLength" class="text-danger"></span>

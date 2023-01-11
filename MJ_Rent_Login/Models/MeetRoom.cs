@@ -6,10 +6,10 @@ namespace MJ_Rent_Login.Models
 {
     public class MeetRoom
     {
-        [Display(Name = "會議室編號")]
+        [Display(Name = "房間編號")]
         public int Id { get; set; }
 
-        [Display(Name = "會議室名稱")]
+        [Display(Name = "房間名稱")]
         public string Name { get; set; }
 
         [Display(Name = "描述")]
@@ -21,10 +21,10 @@ namespace MJ_Rent_Login.Models
         [Display(Name = "容納人數")]
         public int Capacity { get; set; }
 
-        [Display(Name = "投影機")]
+        [Display(Name = "浴缸")]
         public Boolean HaveProjector { get; set; }
 
-        [Display(Name = "白板")]
+        [Display(Name = "冷氣")]
         public Boolean HaveWhiteBoard { get; set; }
 
         [Display(Name = "使用狀態")]
